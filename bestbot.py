@@ -20,7 +20,6 @@ PRODUCT_CODES = [
     "15166285",
     "15229237",
     "15178453",
-    "14584744"
 ]
 
 # PRODUCT_CODES = [
@@ -88,8 +87,6 @@ async def main():
             ret = await asyncio.gather(*[findProduct(product_code, session) for product_code in PRODUCT_CODES])
             ATTEMPTS += 1
             time.sleep(RETRY_SECONDS)
-
-        print(FOUND)
 
 asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
 asyncio.run(main())
