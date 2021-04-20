@@ -22,28 +22,29 @@ PRODUCT_CODES = [
     "15178453",
 ]
 
-# PRODUCT_CODES = [
-#     "15309513"
-# ]
-
-RETRY_SECONDS = 1
+RETRY_SECONDS = 0.1
 TIMEOUT_SECONDS = 20
 
 API_URL = 'https://www.bestbuy.ca/ecomm-api/availability/products?accept=application%2Fvnd.bestbuy.standardproduct.v1%2Bjson&accept-language=en-CA&locations=219%7C608%7C235%7C935%7C995%7C247%7C631%7C620&postalCode=' + POSTAL_CODE + '&skus='
 SEARCH_URL = 'https://www.bestbuy.ca/en-ca/search?search='
 
+# HEADERS = {
+#     'authority': 'www.bestbuy.ca',
+#     'pragma': 'no-cache',
+#     'cache-control': 'no-cache',
+#     'user-agent': 'Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4159.2 Safari/537.36',
+#     'accept': '*/*',
+#     'sec-fetch-site': 'same-origin',
+#     'sec-fetch-mode': 'cors',
+#     'sec-fetch-dest': 'empty',
+#     'referer': 'https://www.bestbuy.ca/en-ca/',
+#     'accept-language': 'en-US,en;q=0.9'
+# }
+
 HEADERS = {
-    'authority': 'www.bestbuy.ca',
-    'pragma': 'no-cache',
-    'cache-control': 'no-cache',
     'user-agent': 'Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4159.2 Safari/537.36',
-    'accept': '*/*',
-    'sec-fetch-site': 'same-origin',
-    'sec-fetch-mode': 'cors',
-    'sec-fetch-dest': 'empty',
-    'referer': 'https://www.bestbuy.ca/en-ca/',
-    'accept-language': 'en-US,en;q=0.9'
 }
+
 
 FOUND = False
 
