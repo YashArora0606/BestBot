@@ -20,13 +20,14 @@ PRODUCT_CODES = [
     "15166285",
     "15229237",
     "15178453",
+    "14584744"
 ]
 
 RETRY_SECONDS = 0.1
 TIMEOUT_SECONDS = 20
 
 API_URL = 'https://www.bestbuy.ca/ecomm-api/availability/products?accept=application%2Fvnd.bestbuy.standardproduct.v1%2Bjson&accept-language=en-CA&locations=219%7C608%7C235%7C935%7C995%7C247%7C631%7C620&postalCode=' + POSTAL_CODE + '&skus='
-SEARCH_URL = 'https://www.bestbuy.ca/en-ca/search?search='
+SEARCH_URL = 'https://www.bestbuy.ca/en-ca/product/'
 
 # HEADERS = {
 #     'authority': 'www.bestbuy.ca',
@@ -63,9 +64,8 @@ async def findProduct(product_code, session):
 
             if (quantity < 1):
 
-                if (not FOUND):
-                    print(product_code + " out of Stock.\tAttempt: " +
-                          str(ATTEMPTS) + "\tTime: " + str(datetime.now()) + "\tURL: " + SEARCH_URL + product_code)
+                print(product_code + " out of Stock.\tAttempt: " +
+                      str(ATTEMPTS) + "\tTime: " + str(datetime.now()) + "\tURL: " + SEARCH_URL + product_code)
             else:
                 FOUND = True
                 print("FOUND " + str(quantity) +
